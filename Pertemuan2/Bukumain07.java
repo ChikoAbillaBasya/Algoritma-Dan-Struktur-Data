@@ -13,5 +13,10 @@ public class Bukumain07 {
         bk1.terjual(5);
         bk1.gantiHarga(60000);
         bk1.tampilInformasi();
+    
+    Buku07 bkchiko = new Buku07("Pemrograman Java", "Rizky", 300, 10, 100000);
+    bkchiko.terjual(11);
+    bkchiko.tampilInformasi();
+    
     }
 }
