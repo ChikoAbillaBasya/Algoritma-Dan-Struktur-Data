@@ -98,7 +98,7 @@ Tidak Harus, karena agar tidak ada ketergantungan urutan pemanggilan antar metho
 5.	Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor berparameter dari class Buku! <br> 
 Jawab : <br>
 
-![alt text](code6.png)
+![alt text](code6.png) <br>
 6.	Commit dan push kode program ke Github 
 
 
