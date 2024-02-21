@@ -88,9 +88,10 @@ Jawab : <br>
 Pada baris program tersebut, sebuah objek bk2 dari class Buku07 dibuat menggunakan konstruktor berparameter. Nilai-nilai yang diperlukan untuk inisialisasi objek bk2 disediakan sebagai argumen untuk konstruktor tersebut. <br>
 3.	Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana hasilnya? Jelaskan mengapa hasilnya demikian! <br>
 Jawab : <br>
-akan mendapatkan error
+akan mendapatkan error <br>
 
 ![alt text](<Screenshot 2024-02-21 151100.png>) <br>
+
 karena menghapus konstruktor default, Java tidak lagi menyediakan konstruktor default secara otomatis. <br>
 4.	Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses secara berurutan? Jelaskan alasannya! <br>
 Jawab : <br>
