@@ -13,10 +13,23 @@ public class Bukumain07 {
         bk1.terjual(5);
         bk1.gantiHarga(60000);
         bk1.tampilInformasi();
-    
-    Buku07 bkchiko = new Buku07("Pemrograman Java", "Rizky", 300, 10, 100000);
-    bkchiko.terjual(11);
-    bkchiko.tampilInformasi();
-    
+
+            
+        Buku07 bk2 = new Buku07("Self Reward", "Maheera Ayesha", 160, 29, 59000);
+        bk2.terjual(11);
+        bk2.tampilInformasi();
+
+        Buku07 bkchiko = new Buku07("Artikel chiko", "chiko", 198, 60, 70000);
+        bkchiko.terjual(11);
+        bkchiko.tampilInformasi();
+
+        int hargaTotal = bkchiko.hitungHargaTotal(11);
+        System.out.println("Harga Total : " + hargaTotal);
+      
+        int diskon = (int) bkchiko.hitungDiskon(hargaTotal);
+        System.out.println("Diskon : " + diskon);
+
+        int hargaBayar = (int) bkchiko.hitungHargaBayar(hargaTotal);
+        System.out.println("Harga Bayar : " + hargaBayar);
     }
 }

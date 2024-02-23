@@ -101,6 +101,18 @@ Jawab : <br>
 
 ![alt text](code6.png) <br>
 6.	Commit dan push kode program ke Github 
+<br><br><br><br><br>
 
+<h3>2.4 Latihan Praktikum
+<h4>1. Pada class Buku yang telah dibuat, tambahkan tiga method yaitu hitungHargaTotal(), 
+hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut <br>
+Jawab : <br>
+
+![alt text](code7.png)
+<br>
+Hasil Program <br>
+
+![alt text](<Screenshot 2024-02-23 185948.png>)
+<br>
 
 
