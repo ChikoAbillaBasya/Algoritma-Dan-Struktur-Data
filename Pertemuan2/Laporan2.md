@@ -122,6 +122,3 @@ Jawab : <br>
 Hasil program <br>
 
 ![alt text](<Screenshot 2024-02-26 114746.png>)
-
-
-
