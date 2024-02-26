@@ -1,3 +1,4 @@
+package Kode;
 public class Buku07 {
     String judul;
     String pengarang;
@@ -40,7 +41,7 @@ public class Buku07 {
     void gantiHarga(int hrg) {
         harga = hrg;
     }
-    
+
     int hitungHargaTotal(int jml) {
         return harga * jml;
     }

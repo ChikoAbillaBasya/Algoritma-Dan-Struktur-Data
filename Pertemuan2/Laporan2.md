@@ -104,8 +104,7 @@ Jawab : <br>
 <br><br><br><br><br>
 
 <h3>2.4 Latihan Praktikum
-<h4>1. Pada class Buku yang telah dibuat, tambahkan tiga method yaitu hitungHargaTotal(), 
-hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut <br>
+<h4>1. Soal 1 <br>
 Jawab : <br>
 
 ![alt text](code7.png)
@@ -114,5 +113,15 @@ Hasil Program <br>
 
 ![alt text](<Screenshot 2024-02-23 185948.png>)
 <br>
+
+<h4>2. Soal 2 <br>
+Jawab : <br>
+
+![alt text](code8.png) <br>
+
+Hasil program <br>
+
+![alt text](<Screenshot 2024-02-26 114746.png>)
+
 
 
