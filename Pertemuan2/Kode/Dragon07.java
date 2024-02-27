@@ -13,7 +13,7 @@ public class Dragon07 {
     }
 
     void moveLeft() {
-        if (x - 1 >= 0) {
+        if (x > 0) {
             x--;
             printposition();
         } else {
@@ -22,7 +22,7 @@ public class Dragon07 {
     }
 
     void moveRight() {
-        if (x + 1 < width) {
+        if (x < width) {
             x++;
             printposition();
         } else {
@@ -31,7 +31,7 @@ public class Dragon07 {
     }
 
     void moveUp() {
-        if (y - 1 >= 0) {
+        if (y > 0) {
             y--;
             printposition();
         } else {
@@ -40,7 +40,7 @@ public class Dragon07 {
     }
 
     void moveDown() {
-        if (y + 1 < height) {
+        if (y < height) {
             y++;
             printposition();
         } else {
