@@ -94,8 +94,7 @@ Jawab :
 # 2.4 Latihan Praktikum
 1. Soal 1 <br>
 Jawab : 
-![alt text](img/code7.png)
-<br>
+![alt text](img/code7.png)<br>
 Hasil Program<br>
 ![alt text](<img/Screenshot 2024-02-23 185948.png>)
 
