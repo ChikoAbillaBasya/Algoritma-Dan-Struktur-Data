@@ -14,17 +14,17 @@ public class Perulangan07 {
         }
 
         System.out.println("n = " + digitTerakhir);
-        StringBuilder output = new StringBuilder();
+        String output = "";
         for (int i = 1; i <= digitTerakhir; i++) {
             if (i == 6 || i == 10) {
                 continue;
             }
             if (i % 2 == 0) {
-                output.append(i).append(" ");
+                output += i + " ";
             } else {
-                output.append("* ");
+                output += "* ";
             }
         }
-        System.out.println(" " + output.toString().trim());
+        System.out.println(" " + output);
     }
 }

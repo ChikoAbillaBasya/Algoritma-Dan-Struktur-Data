@@ -38,7 +38,7 @@ public class Tugas207 {
         double waktu = scanner.nextDouble();
 
         double kecepatan = jarak / waktu;
-        System.out.printf("Kecepatan adalah : %.2f ", kecepatan);
+        System.out.printf("Kecepatan adalah : %.2f km/jm", kecepatan);
     }
 
     public static void hitungJarak() {
@@ -51,7 +51,7 @@ public class Tugas207 {
         double waktu = scanner.nextDouble();
 
         double jarak = kecepatan * waktu;
-        System.out.printf("Jarak adalah : %.2f ", jarak);
+        System.out.printf("Jarak adalah : %.2f km", jarak);
     }
 
     public static void hitungWaktu() {
@@ -64,6 +64,6 @@ public class Tugas207 {
         double kecepatan = scanner.nextDouble();
 
         double waktu = jarak / kecepatan;
-        System.out.printf("Waktu adalah : %.2f ", waktu);
+        System.out.printf("Waktu adalah : %.2f jam", waktu);
     }
 }
