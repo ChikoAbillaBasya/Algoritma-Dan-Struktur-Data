@@ -52,32 +52,32 @@ public class ArrayObjects07 {
 Output<br> ![alt text](<img/Screenshot Output PersegiPanjang.png>) <br>
 # Pertanyaan
 1. Berdasarkan uji coba 3.2, apakah class yang akan dibuat array of object harus selalu memiliki atribut dan sekaligus method?Jelaskan! <br>
-Jawab : Dalam uji coba tersebut, saat membuat array object, class yang digunakan tidak harus selalu memiliki atribut dan method. dan dapat membuat array object menggunakan class sederhana tanpa atribut atau method apapun.<br>
+Jawab : Tidak, jika saat membuat array object, class yang digunakan tidak harus selalu memiliki atribut dan method. dan dapat membuat array object menggunakan class sederhana tanpa atribut atau method apapun.<br>
 2. Apakah class PersegiPanjang memiliki konstruktor?Jika tidak, kenapa dilakukan pemanggilan 
 konstruktur pada baris program berikut : 
 
 ```java
 ppArray[1] = new PersegiPanjang(); 
 ```
-Jawab : tidak, Karena memiliki konstruktor yang didefinisikan secara eksplisit, maka Java akan menyediakan konstruktor default. Jadi, bahkan jika tidak ada konstruktor yang didefinisikan secara eksplisit dalam class PersegiPanjang, Java akan membuat konstruktor default secara otomatis. <br>
+Jawab : Tidak, pemanggilan konstruktor pada baris ppArray[1] = new PersegiPanjang(); adalah pemanggilan konstruktor default yang dibuat secara otomatis oleh java. <br>
 
 3. Apa yang dimaksud dengan kode berikut ini: <br>
 ```java
-PersegiPanjang07[] ppArray = new PersegiPanjang[3];
+PersegiPanjang[] ppArray = new PersegiPanjang[3];
 ```
-Jawab : Baris kode PersegiPanjang07[] ppArray = new PersegiPanjang[3]; adalah mendeklarasikan sebuah array dengan nama ppArray yang berisi objek dari class PersegiPanjang07. Array ini memiliki panjang 3, artinya dapat menyimpan 3 objek PersegiPanjang07. Namun, saat array ini dideklarasikan, objek-objek tersebut belum diinisialisasi.<br>
+Jawab : Kode tersebut instansiasi sebuah array dengan nama ppArray yang berisi objek dari class PersegiPanjang. Array ini memiliki 3 elemen.<br>
 
 4. Apa yang dimaksud dengan kode berikut ini: <br>
 ```java
-        ppArray[1] = new PersegiPanjang07();
+        ppArray[1] = new PersegiPanjang();
         ppArray[1].panjang = 80;
         ppArray[1].lebar = 40;
 ```
 <br>
-Jawab : Kode tersebut membuat sebuah array ppArray yang berisi objek PersegiPanjang07. Kemudian, indeks ke-1 dari array tersebut diinisialisasi dengan objek PersegiPanjang07 baru, dengan panjang 80 dan lebar 40.<br>
+Jawab : Kode tersebut membuat sebuah array ppArray yang berisi objek PersegiPanjang. Kemudian, indeks ke-1 dari array tersebut diinisialisasi dengan objek PersegiPanjang baru, dengan panjang 80 dan lebar 40.<br>
 
 5. Mengapa class main dan juga class PersegiPanjang dipisahkan pada uji coba 3.2?<br>
-Jawab : Agar memisahkan entitas ke dalam file atau class terpisah untuk mempermudah manajemen dan pemahaman kode. Ini juga memungkinkan penggunaan kelas PersegiPanjang di berbagai bagian program tanpa perlu menaruhnya di dalam class main.
+Jawab : Pemisahan class ArrayObjects dan class PersegiPanjang berguna agar kode dapat dikelola dengan lebih baik dan mudah.
 #
 # Percobaan 2: Menerima Input Isian Array Menggunakan Looping
 Kode Program 
@@ -141,7 +141,7 @@ dibawah ini akan memunculkan error saat dijalankan. Mengapa? <br>
 Persegi[] pgArray = Persegi (100);
 PgArray[5].sisi = 20;
 ```
-Jawab : Jadi, error dalam kode tersebut adalah kombinasi dari masalah penulisan variabel, inisialisasi array, dan akses ke elemen array yang belum diinisialisasi. <br>
+Jawab : Kode dibawah akan error karena kode tersebut butuh kode pgArray[5] = new Persegi(); diatas kode pgArray[5].sisi = 20 dan dibawah kode Persegi[] pgArray = new Persegi[100]. <br>
 Berikut adalah cara yang benar untuk melakukan inisialisasi array dan mengatur nilai sisi untuk objek di dalamnya :
 ```java
 Persegi[] pgArray = new Persegi[100];
@@ -178,16 +178,28 @@ public class ArrayObjects07 {
 ```
 5. Apakah boleh Jika terjadi duplikasi instansiasi array of objek, misalkan saja instansiasi dilakukan 
 pada ppArray[i] sekaligus ppArray[0]?Jelaskan! <br>
-Jawab : Tidak, Karena tidak dapat melakukan duplikasi instansiasi array of objek pada indeks yang sama. Setiap indeks pada array harus unik, dan jika melakukan instansiasi pada ppArray[i] dan ppArray[0] pada saat yang bersamaan, itu akan menimbulkan kesalahan saat kompilasi. Setiap indeks pada array harus menunjuk ke objek yang berbeda.
+Jawab : Ya, boleh melakukan duplikasi instansiasi array objek pada dua indeks yang berbeda dalam array. namun tidak dianjurkan karena akan menimbulkan kebingungan, inefisiensi, dan ketidakkonsistenan data.
 #
 #  Percobaan 3: Penambahan Operasi Matematika di Dalam Method
 kode Program<br>
 ``` java
 package Pertemuan3.Kode;
 
-    public class PersegiPanjang07 {
-        public int panjang;
-        public int lebar;
+public class Balok07 {
+    public int panjang;
+    public int lebar;
+    public int tinggi;
+
+    public Balok07(int p, int l, int t) {
+        panjang = p;
+        lebar = l;
+        tinggi = t;
+    }
+
+    public int hitungVolume()  
+    {  
+        return panjang * lebar * tinggi;
+    }
 }
 ```
 ``` java
@@ -304,7 +316,6 @@ public class SegitigaMain07 {
     }
 }
 ```
-
 <br>
 
 5. Kemudian menggunakan looping, cetak luas dan keliling dengan cara memanggil method hitungLuas() dan hitungKeliling(). <br>
@@ -333,15 +344,155 @@ public class SegitigaMain07 {
 Output <br> ![alt text](<img/Screenshot Output Segitiga.png>)
 #
 # Latihan Praktikum
-1. Buatlah program yang dapat menghitung luas permukaan dan volume bangun ruang kerucut, 
-limas segi empat sama sisi, dan bola. Buatlah 3 (tiga) class sesuai dengan jumlah jenis bangun 
-ruang. Buatlah satu main class untuk membuat array of objects yang menginputkan atributatribut yang ada menggunakan konstruktor semua bangun ruang tersebut. Dengan ketentuan, <br>
+1. Buatlah program yang dapat menghitung luas permukaan dan volume bangun ruang kerucut, limas segi empat sama sisi, dan bola. Buatlah 3 (tiga) class sesuai dengan jumlah jenis bangun ruang. Buatlah satu main class untuk membuat array of objects yang menginputkan atribut-atribut yang ada menggunakan konstruktor semua bangun ruang tersebut. Dengan ketentuan, <br>
 a. Buat looping untuk menginputkan masing-masing atributnya, kemudian tampilkan luas permukaan dan volume dari tiap jenis bangun ruang tersebut.<br>
 b. Pada kerucut, inputan untuk atribut hanya jari-jari dan sisi miring <br>
 c. Pada limas segi empat sama sisi, inputan untuk atribut hanya panjang sisi alas dan tinggi limas <br>
 d. Pada bola, inpuntan untuk atribut hanya jari-jari <br>
-Jawab :
+Jawab : <br>
+Kode Program Kerucut
+```java
+package Pertemuan3.Kode;
 
+public class Kerucut07 {
+    public double jariJari;
+    public double sisiMiring;
+
+    public Kerucut07(double jariJari, double sisiMiring) {
+        this.jariJari = jariJari;
+        this.sisiMiring = sisiMiring;
+    }
+
+    public double hitungLuas() {
+        return Math.PI * jariJari * jariJari;
+    }
+
+    public double hitungVolume() {
+        return (1.0 / 3.0) * Math.PI * jariJari * jariJari * sisiMiring;
+    }
+}
+```
+Kode Program Limas Segi Empat
+```java
+package Pertemuan3.Kode;
+
+public class LimasSegiEmpat07 {
+    public double sisiAlas;
+    public double tinggi;
+
+    public LimasSegiEmpat07(double sisiAlas, double tinggi) {
+        this.sisiAlas = sisiAlas;
+        this.tinggi = tinggi;
+    }
+
+    public double hitungLuasPermukaan() {
+        double luasAlas = sisiAlas * sisiAlas;
+        double luasSegitiga = (sisiAlas * tinggi) / 2;
+        return luasAlas + 4 * luasSegitiga;
+    }
+
+    public double hitungVolume() {
+        return (sisiAlas * sisiAlas * tinggi) / 3;
+    }
+}
+```
+Kode Program Class Bola
+```java
+package Pertemuan3.Kode;
+
+public class Bola07 {
+    public double jariJari;
+
+    public Bola07(double jariJari) {
+        this.jariJari = jariJari;
+    }
+
+    public double hitungLuasPermukaan() {
+        return 4 * Math.PI * Math.pow(jariJari, 2);
+    }
+
+    public double hitungVolume() {
+        return (4.0 / 3.0) * Math.PI * Math.pow(jariJari, 3);
+    }
+}
+```
+```java
+package Pertemuan3.Kode;
+import java.util.Scanner;
+
+public class BangunRuangMain07 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Masukkan Jumlah Kerucut : ");
+        int jumlahKerucut = sc.nextInt();
+        Kerucut07[] kerucutArray = new Kerucut07[jumlahKerucut];
+
+        System.out.print("Masukkan Jumlah Limas Segi Empat : ");
+        int jumlahLimasSegiEmpat = sc.nextInt();
+        LimasSegiEmpat07[] limasSegiEmpatArray = new LimasSegiEmpat07[jumlahLimasSegiEmpat];
+
+        System.out.print("Masukkan Jumlah Bola : ");
+        int jumlahBola = sc.nextInt();
+        Bola07[] bolaArray = new Bola07[jumlahBola];
+
+        for (int i = 0; i < jumlahKerucut; i++) {
+            System.out.println();
+            System.out.println("Atribut Kerucut Ke-" + (i + 1));
+            System.out.print("Masukkan Jari-Jari : ");
+            int jariJari = sc.nextInt();
+            System.out.print("Masukkan Sisi Miring : ");
+            int sisiMiring = sc.nextInt();
+            kerucutArray[i] = new Kerucut07(jariJari, sisiMiring);
+        }
+
+        for (int i = 0; i < jumlahLimasSegiEmpat; i++) {
+            System.out.println();
+            System.out.println("Atribut Limas Segi Empat Ke-" + (i + 1));
+            System.out.print("Masukkan Panjang Alas : ");
+            int panjangSisiAlas = sc.nextInt();
+            System.out.print("Masukkan Tinggi : ");
+            int tinggi = sc.nextInt();
+            limasSegiEmpatArray[i] = new LimasSegiEmpat07(panjangSisiAlas, tinggi);
+        }
+
+        for (int i = 0; i < jumlahBola; i++) {
+            System.out.println();
+            System.out.println("Atribut Bola Ke-" + (i + 1));
+            System.out.print("Masukkan Jari-Jari : ");
+            int jariJariBola = sc.nextInt();
+            bolaArray[i] = new Bola07(jariJariBola);
+        }
+
+        System.out.println("\nHasil Perhitungan Kerucut :");
+        for (int i = 0; i < jumlahKerucut; i++) {
+            System.out.println("Kerucut Ke-" + (i + 1));
+            System.out.printf("Luas Kerucut : %.2f\n", kerucutArray[i].hitungLuas());
+            System.out.printf("Volume Kerucut : %.2f\n", kerucutArray[i].hitungVolume());
+            System.out.println();
+        }
+
+        System.out.println("\nHasil Perhitungan Limas Segi Empat :");
+        for (int i = 0; i < jumlahLimasSegiEmpat; i++) {
+            System.out.println("Limas Segi Empat Ke-" + (i + 1));
+            System.out.printf("Luas Limas Segi Empat : %.2f\n", limasSegiEmpatArray[i].hitungLuasPermukaan());
+            System.out.printf("Volume Limas Segi Empat : %.2f\n", limasSegiEmpatArray[i].hitungVolume());
+            System.out.println();
+        }
+
+        System.out.println("\nHasil Perhitungan Bola:");
+        for (int i = 0; i < jumlahBola; i++) {
+            System.out.println("Bola Ke-" + (i + 1));
+            System.out.printf("Luas Bola : %.2f\n", bolaArray[i].hitungLuasPermukaan());
+            System.out.printf("Volume Bola : %.2f\n", bolaArray[i].hitungVolume());
+            System.out.println();
+        }
+    }
+}
+```
+Output <br>
+![alt text](<img/Screenshot Output Bangun Ruang 2.png>)
+![alt text](<img/Screenshot Output Bangun Ruang 1.png>)
 <br>
 
 2. Sebuah kampus membutuhkan program untuk menampilkan informasi mahasiswa berupa nama, nim, jenis kelamin dan juga IPK mahasiswa. Program dapat menerima input semua informasi tersebut, kemudian menampilkanya kembali ke user. Implementasikan program tersebut jika dimisalkan terdapat 3 data mahasiswa yang tersedia. <br>
@@ -376,13 +527,152 @@ nama : Reza <br>
 nim : 8765398 <br>
 Jenis kelamin : L <br>
 Nilai IPK : 3.8 <br>
-Jawab :
+Jawab : <br>
+Kode Program Class
+```java
+package Pertemuan3.Kode;
+public class InformasiMahasiswa07 {
+    
+    public String nama, nim, jenisKelamin;
+    public double ipk;
+  
+    public InformasiMahasiswa07(String nama, String nim, String jenisKelamin, double ipk) {
+        this.nama = nama;
+        this.nim = nim;
+        this.jenisKelamin = jenisKelamin;
+        this.ipk = ipk;
+    }
+}
+```
+Kode Program Main
+```java
+package Pertemuan3.Kode;
+import java.util.Scanner;
 
+public class InformasiMahasiswaMain07 {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        InformasiMahasiswa07[] mahasiswa = new InformasiMahasiswa07[3];
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Masukkan data mahasiswa ke-" + (i + 1));
+            System.out.print("Masukkan nama : ");
+            String nama = sc.nextLine();
+            System.out.print("Masukkan nim : ");
+            String nim = sc.nextLine();
+            System.out.print("Masukkan Jenis Kelamin : ");
+            String jenisKelamin = sc.nextLine();
+            System.out.print("Masukkan IPK : ");
+            double ipk = sc.nextDouble();
+            sc.nextLine();
+
+            mahasiswa[i] = new InformasiMahasiswa07(nama, nim, jenisKelamin, ipk);
+        }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println();
+            System.out.println("Data Mahasiswa ke-" + (i + 1));
+            System.out.println("Nama : " + mahasiswa[i].nama);
+            System.out.println("NIM : " + mahasiswa[i].nim);
+            System.out.println("Jenis Kelamin : " + mahasiswa[i].jenisKelamin);
+            System.out.println("IPK : " + mahasiswa[i].ipk);
+        }
+    }
+}
+```
+Output <br>
+![alt text](<img/Screenshot Output Informasi Mahasiswa.png>)
 <br>
 
-3. Modifikasi program Latihan no.2 di atas, sehingga bisa digunakan untuk menghitung rata-rata IPK, 
-serta menampilkan data mahasiswa dengan IPK terbesar! (gunakan method untuk masing-masing 
-proses tersebut)
-Jawab :
+3. Modifikasi program Latihan no.2 di atas, sehingga bisa digunakan untuk menghitung rata-rata IPK, serta menampilkan data mahasiswa dengan IPK terbesar! (gunakan method untuk masing-masing proses tersebut)
+Jawab : <br>
+Kode Program Class
+```java
+package Pertemuan3.Kode;
+public class InformasiMahasiswa07 {
+    
+    public String nama, nim, jenisKelamin;
+    public double ipk;
+  
+    public InformasiMahasiswa07(String nama, String nim, String jenisKelamin, double ipk) {
+        this.nama = nama;
+        this.nim = nim;
+        this.jenisKelamin = jenisKelamin;
+        this.ipk = ipk;
+    }
+  
+    public static InformasiMahasiswa07 mahasiswaTerbaik(InformasiMahasiswa07[] mhs) {
+        InformasiMahasiswa07 terbaik = mhs[0];
+        for (InformasiMahasiswa07 mahasiswa : mhs) {
+            if (mahasiswa.ipk > terbaik.ipk) {
+            terbaik = mahasiswa;
+        }
+    }
+    
+    return terbaik;
+    }
+  
+    public static double hitungRataIPK(InformasiMahasiswa07[] mhs) {
+        double totalIPK = 0;
+        for (InformasiMahasiswa07 mahasiswa : mhs) {
+            totalIPK += mahasiswa.ipk;
+        }
+        return totalIPK / mhs.length;
+    }
+}  
+```
+Kode Program Main
+```java
+package Pertemuan3.Kode;
+import java.util.Scanner;
 
-<br>
+public class InformasiMahasiswaMain07 {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        InformasiMahasiswa07[] mahasiswa = new InformasiMahasiswa07[3];
+        
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Masukkan data mahasiswa ke-" + (i + 1));
+            System.out.print("Masukkan nama : ");
+            String nama = sc.nextLine();
+            System.out.print("Masukkan nim : ");
+            String nim = sc.nextLine();
+            System.out.print("Masukkan Jenis Kelamin : ");
+            String jenisKelamin = sc.nextLine();
+            System.out.print("Masukkan IPK : ");
+            double ipk = sc.nextDouble();
+            sc.nextLine();
+
+            mahasiswa[i] = new InformasiMahasiswa07(nama, nim, jenisKelamin, ipk);
+        }
+        
+        double rataIPK = InformasiMahasiswa07.hitungRataIPK(mahasiswa);
+
+        System.out.println();
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Data Mahasiswa ke-" + (i + 1));
+            System.out.println("Nama : " + mahasiswa[i].nama);
+            System.out.println("NIM : " + mahasiswa[i].nim);
+            System.out.println("Jenis Kelamin : " + mahasiswa[i].jenisKelamin);
+            System.out.println("IPK : " + mahasiswa[i].ipk);
+        }
+        
+        System.out.println();
+        System.out.printf("Rata-rata IPK : " + "%.2f", rataIPK);
+
+        InformasiMahasiswa07 terbaik = InformasiMahasiswa07.mahasiswaTerbaik(mahasiswa);
+
+        System.out.println();
+        System.out.println("Mahasiswa dengan IPK terbesar :");
+        System.out.println("Nama : " + terbaik.nama);
+        System.out.println("NIM : " + terbaik.nim);
+        System.out.println("Jenis Kelamin : " + terbaik.jenisKelamin);
+        System.out.println("IPK : " + terbaik.ipk);
+    }
+}  
+```
+Output <br>
+![alt text](<img/Screenshot Output Informasi Mahasiswa modif.png>)
