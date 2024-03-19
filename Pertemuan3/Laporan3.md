@@ -13,6 +13,9 @@
 <p align = "center"> Kelas : 1B </p>
 <p align = "center"> Prodi : D-IV TEKNIK INFOMATIKA</p>
 
+
+<br><br><br><br><br>
+
 #
 # Percobaan 1: Membuat Array dari Object, Mengisi dan Menampilkan
 Kode Program 
