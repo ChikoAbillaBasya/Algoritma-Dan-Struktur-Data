@@ -387,10 +387,89 @@ Output <br>
 ```java
 return lsum+rsum+arr[mid];
 ```
-Jawab : return lsum+rsum+arr[mid]; digunakan untuk menambahkan hasil penjumlahan dari lsum, rsum, dan nilai elemen array arr pada posisi mid di bagian kiri (lsum), bagian kanan (rsum), dan elemen tengah (arr[mid]).
-2.	Kenapa dibutuhkan variable mid pada method TotalDC()? 
-3.	Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja. Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan dengan program! 
+Jawab : return lsum+rsum+arr[mid]; digunakan untuk menambahkan hasil penjumlahan dari lsum, rsum, dan nilai elemen array arr pada posisi mid di bagian kiri (lsum), bagian kanan (rsum), dan elemen tengah (arr[mid]). <br>
+2.	Kenapa dibutuhkan variable mid pada method TotalDC()? <br>
+Jawab : untuk membagi array menjadi dua bagian secara rekursif sehingga total dapat dihitung. <br>
+3.	Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja. Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan dengan program! <br>
+Jawab : <br>
+Kode Program Class
+```java
+package Pertemuan5.Kode;
 
+public class Sum07 {
+    int elemen;
+    double keuntungan[][], total[];
+
+    Sum07(int perusahaan, int bulan) {
+        this.elemen = bulan;
+        this.keuntungan = new double[perusahaan][bulan];
+        this.total = new double[perusahaan];
+    }
+
+    double totalBF(double arr[], int noPerusahaan) {
+        for (int i = 0; i < elemen; i++) {
+            total[noPerusahaan] = total[noPerusahaan] + arr[i];
+        }
+        return total[noPerusahaan];
+    }
+
+    double totalDC(double arr[], int l, int r) {
+        if (l == r) {
+            return arr[l];
+        } else if (l < r) {
+            int mid = (l + r) / 2;
+            double lsum = totalDC(arr, l, mid);
+            double rsum = totalDC(arr, mid + 1, r);
+            return lsum + rsum;
+        }
+        return 0;
+    }
+}
+```
+Kode Program Main
+```java
+package Pertemuan5.Kode;
+
+import java.util.Scanner;
+
+public class SumMain07 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("============================================================");
+        System.out.println("Program Menghitung Keuntungan Total (Satuan Juta, Misal 5.9)");
+        System.out.print("Masukkan banyaknya perusahaan : ");
+        int perusahaan = sc.nextInt();
+        System.out.print("Masukkan jumlah bulan : ");
+        int bulan = sc.nextInt();
+
+        Sum07 sm = new Sum07(perusahaan, bulan);
+        System.out.println("============================================================");
+        for (int i = 0; i < perusahaan; i++) {
+            for (int j = 0; j < sm.elemen; j++) {
+                System.out.print("Masukkan keuntungan perusahaan ke - " + (i + 1) + " bulan ke - " + (j + 1) + " : ");
+                sm.keuntungan[i][j] = sc.nextDouble();
+            }
+        }
+
+        System.out.println("============================================================");
+        System.out.println("Algoritma Brute Force");
+        for (int k = 0; k < perusahaan; k++) {
+            System.out.printf(
+                    "Total keuntungan perusahaan " + (k + 1) + " selama " + sm.elemen + " bulan adalah = "
+                            + "%.2f\n", sm.totalBF(sm.keuntungan[k], k));
+        }
+
+        System.out.println("============================================================");
+        System.out.println("Algoritma Divide Conquer");
+        for (int i = 0; i < perusahaan; i++) {
+            System.out.printf("Total keuntungan perusahaan " + (i + 1) + " selama " + sm.elemen + " bulan adalah = "
+                    + "%.2f\n", sm.totalDC (sm.keuntungan[i], 0, sm.elemen - 1));
+        }
+    }
+}
+```
+Output <br>
+![alt text](<img/Screenshot Output Perusahaan.png>)
 #
 # Latihan Praktikum 
 1. Sebuah showroom memiliki daftar mobil dengan data sesuai tabel di bawah ini 
@@ -399,3 +478,96 @@ Tentukan: <br>
 a.)	top_acceleration tertinggi menggunakan Divide and Conquer! <br>
 b.)	top_acceleration terendah menggunakan Divide and Conquer! <br>
 c.)	Rata-rata top_power dari seluruh mobil menggunakan Brute Force! <br>
+Jawab : <br>
+Kode Program Class
+```java
+package Pertemuan5.Kode;
+
+public class Car07 {
+    String merk;
+    String tipe;
+    int tahun;
+    int topAcceleration;
+    int topPower;
+
+    public Car07(String merk, String tipe, int tahun, int topAcceleration, int topPower) {
+        this.merk = merk;
+        this.tipe = tipe;
+        this.tahun = tahun;
+        this.topAcceleration = topAcceleration;
+        this.topPower = topPower;
+    }
+
+    int MaxTopAcceleration(int arr[], int l, int r) {
+        if (l == r) {
+            return arr[l];
+        } else if (l < r) {
+            int mid = (l + r) / 2;
+            int leftMax = MaxTopAcceleration(arr, l, mid);
+            int rightMax = MaxTopAcceleration(arr, mid + 1, r);
+            return Math.max(leftMax, rightMax);
+        }
+        return 0;
+    }
+
+    int MinTopAcceleration(int arr[], int l, int r) {
+        if (l == r) {
+            return arr[l];
+        } else if (l < r) {
+            int mid = (l + r) / 2;
+            int leftMin = MinTopAcceleration(arr, l, mid);
+            int rightMin = MinTopAcceleration(arr, mid + 1, r);
+            return Math.min(leftMin, rightMin);
+        }
+        return 0;
+    }
+
+    double ratatopPower(double arr[]) {
+        double totalPower = 0;
+        for (int i = 0; i < arr.length; i++) {
+            totalPower += arr[i];
+        }
+        return totalPower / arr.length;
+    }
+}
+```
+Kode Program Main
+```java
+package Pertemuan5.Kode;
+
+public class CarMain07 {
+
+    public static void main(String[] args) {
+        Car07[] arr = {
+                new Car07("BMW", "M2 Coupe", 2016, 6816, 728),
+                new Car07("Ford", "Fiesta ST", 2014, 3921, 575),
+                new Car07("Nissan", "370Z", 2009, 4360, 657),
+                new Car07("Subaru", "BRZ", 2014, 4058, 609),
+                new Car07("Subaru", "Impreza WRX STI", 2013, 6255, 703),
+                new Car07("Toyota", "AE86 Trueno", 1986, 3700, 553),
+                new Car07("Toyota", "86/GT86", 2014, 4180, 609),
+                new Car07("Volkswagen", "Golf GTI", 2014, 4180, 631)
+        };
+
+        int[] topAccelerationArray = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            topAccelerationArray[i] = arr[i].topAcceleration;
+        }
+
+        int maxTopAcceleration = arr[0].MaxTopAcceleration(topAccelerationArray, 0, arr.length - 1);
+        System.out.println("Top Acceleration tertinggi : " + maxTopAcceleration);
+        
+        int minTopAcceleration = arr[0].MinTopAcceleration(topAccelerationArray, 0, arr.length - 1);
+        System.out.println("Top Acceleration terendah  : " + minTopAcceleration);
+
+        double[] topPowerArray = new double[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            topPowerArray[i] = arr[i].topPower;
+        }
+        double rataratatopPower = arr[0].ratatopPower(topPowerArray);
+        System.out.println("Rata-rata top power        : " + rataratatopPower);
+    }
+}
+```
+Output <br>
+![alt text](<img/Screenshot Output Latihan.png>)
