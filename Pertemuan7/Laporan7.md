@@ -243,11 +243,10 @@ dan
 3. Jika data Kode Buku yang dimasukkan tidak urut. Apakah program masih dapat berjalan? Mengapa 
 demikian! Tunjukkan hasil screenshoot untuk bukti dengan kode Buku yang acak. Jelaskan Mengapa hal tersebut bisa terjadi? <br>
 Jawab : jika kode tidak urut program masih dapat berjalan, kode acak <br>
-
 ![alt text](<img/Screenshot Output Latihan Binary 3.png>) <br>
 Output yang dihasilkan adalah <br>
-![alt text](<img/Screenshot Output latihan binary 4.png>) <br>
-itu bisa terjadi karena data yang diinputkan tidak urut
+![alt text](<img/Screenshot Output latihan Binary 4.png>) <br>
+itu bisa terjadi karena data yang diinputkan tidak urut 
 4. Jika Kode Buku yang dimasukkan dari Kode Buku terbesar ke terkecil (missal : 20215, 20214, 20212, 20211, 20210) dan elemen yang dicari adalah 20210. Bagaimana hasil dari binary search? Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar hasilnya sesuai! <br>
 Jawab : Hasil Binary Search tidak akan sesuai karna kode buku dari terbesar ke terkecil. sehingga proses perbandingannya harus diubah. <br>
 Hasil Modifikasi 
