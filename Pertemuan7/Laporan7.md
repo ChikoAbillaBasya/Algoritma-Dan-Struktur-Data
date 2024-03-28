@@ -243,6 +243,7 @@ dan
 3. Jika data Kode Buku yang dimasukkan tidak urut. Apakah program masih dapat berjalan? Mengapa 
 demikian! Tunjukkan hasil screenshoot untuk bukti dengan kode Buku yang acak. Jelaskan Mengapa hal tersebut bisa terjadi? <br>
 Jawab : jika kode tidak urut program masih dapat berjalan, kode acak <br>
+
 ![alt text](<img/Screenshot Output Latihan Binary 3.png>) <br>
 Output yang dihasilkan adalah <br>
 ![alt text](<img/Screenshot Output latihan binary 4.png>) <br>
