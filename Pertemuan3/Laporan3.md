@@ -11,7 +11,7 @@
 <p align = "center"> Nama  : Chiko Abilla Basya </p>
 <p align = "center"> NIM   : 2341720005 </p>
 <p align = "center"> Kelas : 1B </p>
-<p align = "center"> Prodi : D-IV TEKNIK INFOMATIKA</p>
+<p align = "center"> Prodi : D-IV Teknik Informatika</p>
 
 
 <br><br><br><br><br>
