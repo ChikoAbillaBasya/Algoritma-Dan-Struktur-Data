@@ -1,7 +1,7 @@
 package Pertemuan7.Kode;
 
 public class Buku07 {
-    String kodeBuku; // Changed data type to String
+    String kodeBuku;
     String judulBuku;
     int tahunTerbit;
     String pengarang;

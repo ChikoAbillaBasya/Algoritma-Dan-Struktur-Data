@@ -242,8 +242,8 @@ public class Array07 {
     }
 }
 ```
-Output 
-![alt text](<img/Screenshot Output Array.png>) <br>
+Output <br>
+![alt text](<img/Screenshot Output Array.png>) 
 #
 # Praktikum Fungsi
 Kode Program

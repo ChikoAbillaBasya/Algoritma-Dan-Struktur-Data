@@ -427,7 +427,7 @@ yang diinginkan user. Daftar penginapan ini harus dapat disorting berdasarkan
 1. Harga dimulai dari harga termurah ke harga tertinggi. <br>
 2. Rating bintang penginapan dari bintang tertinggi (5) ke terendah (1) 
 Buatlah proses sorting data untuk kedua filter tersebut dengan menggunakan algoritma bubble sort dan selection sort. <br>
-![alt text](<img/Screenshot Latihan soal.png>)
+![alt text](<img/Screenshot Latihan soal.png>) <br>
 Kode Program Class
 ```java
 package Pertemuan6.Kode;
