@@ -12,14 +12,18 @@ public class Utama07 {
         Gudang07 gudang = new Gudang07(kapasitas);
 
         while (true) {
-            System.out.println("\nMenu : ");
+            System.out.println("\nMenu");
             System.out.println("1. Tambah Barang");
             System.out.println("2. Ambil Barang");
-            System.out.println("3. Tampilkan Tumpukan");
-            System.out.println("4. Lihat Barang Teratas");
-            System.out.println("5. Keluar");
+            System.out.println("3. Tampilkan Tumpukan Barang");
+            System.out.println("4. Tampilkan Barang Teratas");
+            System.out.println("5. Tampilkan Barang Terbawah");
+            System.out.println("6. Cari Barang Bardasarkan Kode Barang");
+            System.out.println("7. Cari Barang Bardasarkan Nama Barang");
+            System.out.println("8. Keluar");
             System.out.print("Pilih Operasi : ");
             int pilihan = scanner.nextInt();
+            scanner.nextLine();
 
             switch (pilihan) {
                 case 1:
@@ -46,8 +50,36 @@ public class Utama07 {
                     gudang.lihatBarangTeratas();
                     break;
                     
-                case 5:
-                    return;
+                    case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+
+                case 6:
+                    System.out.print("Masukkan kode barang : ");
+                    kode = scanner.nextInt();
+                    scanner.nextLine();
+                    Barang07 barangDitemukan = gudang.cariBarangKode(kode);
+                    if (barangDitemukan != null) {
+                        System.out.println("Barang Dengan Kode " + kode + " Ditemukan : " + barangDitemukan.nama);
+                    } else {
+                        System.out.println("Barang Dengan Kode " + kode + " Tidak Ditemukan.");
+                    }
+                    break;
+
+                case 7:
+                    System.out.print("Masukkan Nama Barang : ");
+                    nama = scanner.nextLine();
+                    barangDitemukan = gudang.cariBarangNama(nama);
+                    if (barangDitemukan != null) {
+                        System.out.println("Barang Dengan Nama " + nama + " Dan Kode " +  barangDitemukan.kode  + " Ditemukan : " + barangDitemukan.nama);
+                    } else {
+                        System.out.println("Barang Dengan Nama " + nama + " Tidak Ditemukan.");
+                    }
+                    break;
+
+                case 8:
+                    break;
+
                 default:
                     System.out.println("Pilihan tidak valid. Silahkan coba lagi");
             }
