@@ -491,7 +491,7 @@ Jawab : Method konversi menerima sebuah string sebagai input dan mengonversi str
 ```java
  c = Q.charAt(i);
 ```
-Jawab : Potongan kode yang Anda berikan c = Q.charAt(i); digunakan untuk mengambil karakter pada indeks i dari string Q dan menyimpannya dalam variabel c.
+Jawab : digunakan untuk mengambil karakter pada posisi indeks i dari string Q, yang merupakan ekspresi infix yang akan dikonversi menjadi postfix
 #
 # 2.4 Latihan Praktikum
 Perhatikan dan gunakan kembali kode program pada Percobaan 1. Tambahkan dua method berikut pada class Gudang : <br>
@@ -723,3 +723,6 @@ public class Utama07 {
 }
 ```
 Output <br>
+![alt text](<img/Screenshot 2024-04-14 094749.png>)
+![alt text](<img/Screenshot 2024-04-14 094811.png>)
+![alt text](<img/Screenshot 2024-04-14 094838.png>)
