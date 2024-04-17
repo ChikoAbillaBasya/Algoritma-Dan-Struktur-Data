@@ -26,7 +26,7 @@ public class UtsMain07 {
         Nm.selectionSortAscending();
         int posisiSetelahPengurutanAscending = Nm.FindBinarySearchAscending(cari, 0, Nm.listNmr.length - 1);
         if (posisiSetelahPengurutanAscending != -1) {
-            System.out.println("Nm " + cari + " Ditemukan Pada Indeks Ke-" + (posisiSetelahPengurutanAscending)
+            System.out.println("Nomor " + cari + " Ditemukan Pada Indeks Ke-" + (posisiSetelahPengurutanAscending)
                     + " Setelah Pengurutan Ascending");
         } else {
             System.out.println("Nomor " + cari + " Tidak Ditemukan Pada Data Nomor");
