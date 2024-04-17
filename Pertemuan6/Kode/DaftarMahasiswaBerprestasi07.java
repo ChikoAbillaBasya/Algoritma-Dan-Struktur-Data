@@ -1,6 +1,5 @@
 package Pertemuan6.Kode;
 
-
 public class DaftarMahasiswaBerprestasi07 {
     Mahasiswa07 listMhs[] = new Mahasiswa07[5];
     int idx;

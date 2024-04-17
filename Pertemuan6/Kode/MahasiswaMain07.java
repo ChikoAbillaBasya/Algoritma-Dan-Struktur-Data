@@ -11,7 +11,7 @@ public class MahasiswaMain07 {
         Mahasiswa07 m4 = new Mahasiswa07("Abdul", 2017, 23, 2);
         Mahasiswa07 m5 = new Mahasiswa07("Ummi", 2019, 21, 3.75);
 
-        list.tambah(m1);
+        list.tambah(m1);   
         list.tambah(m2);
         list.tambah(m3);
         list.tambah(m4);
