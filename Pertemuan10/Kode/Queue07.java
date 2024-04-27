@@ -64,15 +64,16 @@ public class Queue07 {
         }
     }
 
-    public void enqueue(int dt) {
+    void enqueue(int dt) {
         if (isFull()) {
-            System.out.println("Queue Sudah Penuh ");
+            System.out.println("Queue sudah penuh");
+            System.exit(1);
         } else {
             if (isEmpty()) {
                 front = rear = 0;
             } else {
                 if (rear == max - 1) {
-                    rear =0;
+                    rear = 0;
                 } else {
                     rear++;
                 }
@@ -85,7 +86,8 @@ public class Queue07 {
     public int dequeue() {
         int dt = 0;
         if (isEmpty()) {
-            System.out.println("Queue Masih Kosong ");
+            System.out.println("Queue masih kosong");
+            System.exit(1);
         } else {
             dt = data[front];
             size--;
@@ -99,7 +101,7 @@ public class Queue07 {
                 }
             }
         }
-        return dt;  
+        return dt;
     } 
 
     public static void menu() {

@@ -229,3 +229,44 @@ Jawab :
 ```
 7. Pada saat terjadi queue overflow dan queue underflow, program tersebut tetap dapat berjalan dan hanya menampilkan teks informasi. Lakukan modifikasi program sehingga pada saat terjadi queue overflow dan queue underflow, program dihentikan! <br>
 Jawab :
+```java
+void enqueue(int dt) {
+        if (isFull()) {
+            System.out.println("Queue sudah penuh");
+            System.exit(1);
+        } else {
+            if (isEmpty()) {
+                front = rear = 0;
+            } else {
+                if (rear == max - 1) {
+                    rear = 0;
+                } else {
+                    rear++;
+                }
+            }
+            data[rear] = dt;
+            size++;
+        }
+    }
+
+    public int dequeue() {
+        int dt = 0;
+        if (isEmpty()) {
+            System.out.println("Queue masih kosong");
+            System.exit(1);
+        } else {
+            dt = data[front];
+            size--;
+            if (isEmpty()) {
+                front = rear = -1;
+            } else {
+                if (front == max - 1) {
+                    front = 0;
+                } else {
+                    front++;
+                }
+            }
+        }
+        return dt;
+    }
+```
