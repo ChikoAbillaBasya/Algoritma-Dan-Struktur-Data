@@ -515,8 +515,91 @@ public class MahasiswaMain07 {
     }
 }
 ```
+Output <br>
+![alt text](<img/Screenshot Output tugas 1.png>)
 
 2 Buatlah implementasi program antrian layanan unit kemahasiswaan sesuai dengan kondisi yang 
 ditunjukkan pada soal nomor 1! Ketentuan <br>
 a. Implementasi antrian menggunakan Queue berbasis Linked List! <br>
 b. Program merupakan proyek baru, bukan modifikasi dari soal nomor 1! <br>
+
+Jawab : <br>
+Kode Program Class
+```java
+package Pertemuan11.Kode;
+
+class MahasiswaQueue07 {
+    int NIM;
+    String nama;
+    MahasiswaQueue07 next;
+
+    MahasiswaQueue07(int NIM, String nama) {
+        this.NIM = NIM;
+        this.nama = nama;
+        this.next = null;
+    }
+}
+```
+Kode Program Class
+```java
+package Pertemuan11.Kode;
+
+class Queue {
+    MahasiswaQueue07 front, rear;
+
+    Queue() {
+        this.front = this.rear = null;
+    }
+
+
+    void enqueue(int NIM, String nama) {
+        MahasiswaQueue07 newNode = new MahasiswaQueue07(NIM, nama);
+        if (this.rear == null) {
+            this.front = this.rear = newNode;
+            return;
+        }
+        this.rear.next = newNode;
+        this.rear = newNode;
+    }
+
+
+    MahasiswaQueue07 dequeue() {
+        if (this.front == null) return null;
+        MahasiswaQueue07 temp = this.front;
+        this.front = this.front.next;
+        if (this.front == null) this.rear = null;
+        return temp;
+    }
+
+    void printQueue() {
+        MahasiswaQueue07 current = front;
+        while (current != null) {
+            System.out.println("NIM: " + current.NIM + ", Nama: " + current.nama);
+            current = current.next;
+        }
+    }
+}
+```
+Kode Program Main
+```java
+package Pertemuan11.Kode;
+
+public class QueueMain07 {
+    public static void main(String[] args) {
+        Queue queue = new Queue();
+        queue.enqueue(111, "Anton");
+        queue.enqueue(112, "Prita");
+        queue.enqueue(113, "Yusuf");
+        queue.enqueue(114, "Doni");
+        queue.enqueue(115, "Sari");
+
+        queue.printQueue();
+
+        System.out.println("\nDequeue: " + queue.dequeue().nama);
+        queue.printQueue();
+    }
+
+}
+```
+Output <br>
+![alt text](<img/Screenshot Output tugas 2.png>)
