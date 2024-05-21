@@ -149,11 +149,14 @@ Output <br>
 ![alt text](<img/Screenshot Output percobaan 1.png>)
 # 2.1.2 Pertanyaan
 1. Mengapa hasil compile kode program di baris pertama menghasilkan “Linked List Kosong”?
+Jawab : Karena pada saat program pertama kali dijalankan linked listnya masih kosong jadi pada kondisi isempty pada metode print akan true dan menceteak linked list kosong
 2. Jelaskan kegunaan variable temp secara umum pada setiap method!
+Jawab : variable temp digunakan untuk menyimpan referensi ke node yang sedang diproses dalam linked list, sehingga dapat melakukan operasi seperti menambahkan, menghapus, atau mencetak node dengan mudah.
 3. Perhatikan class SingleLinkedList, pada method insertAt Jelaskan kegunaan kode berikut
 ```java
 if(temp.next.next == null) tail = temp.next;
 ```
+Jawab :  digunakan untuk memastikan bahwa node baru yang ditambahkan diakhir diatur untuk menunjuk ke node baru dan memeriksa apakah node yang ditunjuk merupakan node terakhir, jika ya maka akan diatur ke node baru dan tail selalu menunjuk ke node terakhir.
 #
 # 2.2 Modifikasi Elemen pada Single Linked List
 Kode Program Class
@@ -384,15 +387,136 @@ Output <br>
 ![alt text](<img/Screenshot Output percobaan 2.png>)
 # 2.2.3 Pertanyaan
 1. Mengapa digunakan keyword break pada fungsi remove? Jelaskan!
+Jawab : Keyword break digunakan pada fungsi remove() untuk menghentikan iterasi melalui linked list setelah node yang cocok dengan index yang diberikan telah ditemukan.
 2. Jelaskan kegunaan kode dibawah pada method remove
 ```java
-else if (temp.next.data == key) {}
+else if (temp.next.data == key) {
     temp.next = temp.next.next;
+}
 ```
-
-
-
-
-
+Jawab : Digunakan untuk menghapus node yang memiliki nilai data yang sama dengan nilai key yang dicari yang kemudian digantikan dengan nilai selanjutnya.
 #
 # Tugas
+1. Implementasikan ilustrasi Linked List Berikut. Gunakan 4 macam penambahan data yang telah 
+dipelajari sebelumnya untuk menginputkan data
+![alt text](<img/Screenshot Soal Tugas.png>)
+Jawab : <br>
+Kode Program Class
+```java
+package Pertemuan11.Kode;
+
+public class Mahasiswa07 {
+    int NIM;
+    String Nama;
+    Mahasiswa07 next;
+
+    public Mahasiswa07(int NIM, String Nama) {
+        this.NIM = NIM;
+        this.Nama = Nama;
+        this.next = null;
+    }
+}
+```
+Kode Program Class
+```java
+package Pertemuan11.Kode;
+
+public class MahasiswaLinkedList07 {
+    Mahasiswa07 head;
+
+    public MahasiswaLinkedList07() {
+        this.head = null;
+    }
+
+    public void addFirst(int NIM, String Nama) {
+        Mahasiswa07 baru = new Mahasiswa07(NIM, Nama);
+        baru.next = head;
+        head = baru;
+    }
+
+    public void addLast(int NIM, String Nama) {
+        Mahasiswa07 baru = new Mahasiswa07(NIM, Nama);
+        if (head == null) {
+            head = baru;
+            return;
+        }
+        Mahasiswa07 temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = baru;
+    }
+
+    public void insertAfter(int kunci, int NIM, String Nama) {
+        Mahasiswa07 baru = new Mahasiswa07(NIM, Nama);
+        Mahasiswa07 temp = head;
+        while (temp != null && temp.NIM != kunci) {
+            temp = temp.next;
+        }
+        if (temp == null) {
+            System.out.println("Data dengan NIM " + kunci + " tidak ditemukan.");
+            return;
+        }
+        baru.next = temp.next;
+        temp.next = baru;
+    }
+
+    public void insertAt(int posisi, int NIM, String Nama) {
+        if (posisi < 0) {
+            System.out.println("Posisi tidak boleh negatif!");
+            return;
+        }
+        if (posisi == 0) {
+            addFirst(NIM, Nama);
+            return;
+        }
+        Mahasiswa07 baru = new Mahasiswa07(NIM, Nama);
+        Mahasiswa07 temp = head;
+        for (int i = 0; i < posisi - 1; i++) {
+            if (temp == null) {
+                System.out.println("Posisi melebihi panjang linked list!");
+                return;
+            }
+            temp = temp.next;
+        }
+        if (temp == null) {
+            System.out.println("Posisi melebihi panjang linked list!");
+            return;
+        }
+        baru.next = temp.next;
+        temp.next = baru;
+    }
+
+    public void cetak() {
+        Mahasiswa07 temp = head;
+        System.out.println("Isi Linked List:");
+        while (temp != null) {
+            System.out.println("NIM: " + temp.NIM + ", Nama: " + temp.Nama);
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+```
+Kode Program Main
+```java
+package Pertemuan11.Kode;
+
+public class MahasiswaMain07 {
+    public static void main(String[] args) {
+        MahasiswaLinkedList07 linkedList = new MahasiswaLinkedList07();
+
+        linkedList.addFirst(111, "Anton");
+        linkedList.addLast(112, "Prita");
+        linkedList.insertAfter(112, 113, "Yusuf");
+        linkedList.insertAt(3, 114, "Doni");
+
+        linkedList.cetak();
+    }
+}
+```
+
+2 Buatlah implementasi program antrian layanan unit kemahasiswaan sesuai dengan kondisi yang 
+ditunjukkan pada soal nomor 1! Ketentuan <br>
+a. Implementasi antrian menggunakan Queue berbasis Linked List! <br>
+b. Program merupakan proyek baru, bukan modifikasi dari soal nomor 1! <br>
