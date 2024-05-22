@@ -1,4 +1,4 @@
-package Kuis;
+package Kuis1;
 public class Persegi {
 
    public int panjang;
