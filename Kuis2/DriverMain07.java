@@ -34,13 +34,12 @@ public class DriverMain07 {
         // Mencetak daftar pembalap
         for (int i = 0; i < drivers.length; i++) {
             System.out.println("ID Pembalap : " + (i + 1) +" \t|| " + drivers[i]);
-            //System.out.println(drivers[i] + " || " + drivers[i + 10]);
         }
 
         // Memasukkan jumlah balapan
         System.out.print("Masukkan Jumlah Balapan: ");
         int jumlahBalapan = scanner.nextInt();
-        scanner.nextLine(); // mengonsumsi newline
+        scanner.nextLine(); 
 
         for (int balapan = 1; balapan <= jumlahBalapan; balapan++) {
             DoubleLinkedList hasilBalapan = new DoubleLinkedList();
