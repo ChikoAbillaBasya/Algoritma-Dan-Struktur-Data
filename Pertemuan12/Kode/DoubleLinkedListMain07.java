@@ -20,7 +20,6 @@ public class DoubleLinkedListMain07 {
         System.out.println("===========================");
         dll.clear();
         dll.print();
-        
         System.out.println("Size : " + dll.size());
         dll.addLast(50);
         dll.addLast(40);
@@ -41,8 +40,22 @@ public class DoubleLinkedListMain07 {
         dll.remove(1);
         dll.print();
         System.out.println("Size : " + dll.size());
+        System.out.println("===========================");
         dll.print();
         System.out.println("Size : " + dll.size());
-        
+        System.out.println("===========================");
+        dll.addFirst(3);
+        dll.addLast(4);
+        dll.addFirst(7);
+        dll.print();
+        System.out.println("Size : " + dll.size());
+        System.out.println("===========================");
+        dll.add(40, 1);
+        dll.print();
+        System.out.println("Size : " + dll.size());
+        System.out.println("===========================");
+        System.out.println("Data Awal Pada Linked List Adalah : " + dll.getFirst());
+        System.out.println("Data Akhir Pada Linked List Adalah : " + dll.getLast());
+        System.out.println("Data indeks ke-1 pada Linked List Adalah : " + dll.get(1));
     }
 }
