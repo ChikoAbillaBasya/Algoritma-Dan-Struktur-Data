@@ -526,7 +526,7 @@ public void updateJarak(int asal, int tujuan, int jarakBaru) {
     }
 ```
 3. Tambahkan method hitungEdge untuk menghitung banyaknya edge yang terdapat di dalam graf <br>
-Jawab ;
+Jawab :
 ```java
 public int hitungEdge() {
         int totalEdge = 0;
