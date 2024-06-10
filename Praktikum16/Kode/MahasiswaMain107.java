@@ -2,12 +2,16 @@ package Praktikum16.Kode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Scanner;
+import java.util.LinkedList;
 
 public class MahasiswaMain107 {
     private static List<Mahasiswa107> daftarMahasiswa = new ArrayList<>();
     private static List<MataKuliah107> daftarMataKuliah = new ArrayList<>();
     private static List<Nilai107> daftarNilai = new ArrayList<>();
+    private static Queue<Mahasiswa107> antrianHapusMahasiswa = new LinkedList<>();
+
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -22,7 +26,8 @@ public class MahasiswaMain107 {
             System.out.println("2. Tampil Nilai");
             System.out.println("3. Mencari Nilai Mahasiswa");
             System.out.println("4. Urut Data Nilai");
-            System.out.println("5. Keluar");
+            System.out.println("5. Hapus Data Mahasiswa");
+            System.out.println("6. Keluar");
             System.out.println("************************************************");
             System.out.print("Pilih: ");
             
@@ -43,6 +48,9 @@ public class MahasiswaMain107 {
                     urutDataNilai();
                     break;
                 case 5:
+                    hapusMahasiswa();
+                    break;
+                case 6:
                     exit = true;
                     break;
                 default:
@@ -139,4 +147,29 @@ public class MahasiswaMain107 {
         System.out.println("Data nilai telah diurutkan.");
         tampilNilai();
     }
+
+    private static void hapusMahasiswa() {
+        System.out.print("Masukkan NIM mahasiswa yang akan dihapus: ");
+        String nim = scanner.nextLine();
+        
+        Mahasiswa107 mahasiswaToRemove = null;
+        for (Mahasiswa107 mahasiswa : daftarMahasiswa) {
+            if (mahasiswa.getNim().equals(nim)) {
+                mahasiswaToRemove = mahasiswa;
+                break;
+            }
+        }
+        
+        if (mahasiswaToRemove != null) {
+            // Hapus mahasiswa dari daftar mahasiswa
+            daftarMahasiswa.remove(mahasiswaToRemove);
+            
+            // Tambahkan mahasiswa ke dalam antrian hapus
+            antrianHapusMahasiswa.add(mahasiswaToRemove);
+            
+            System.out.println("Mahasiswa berhasil dihapus.");
+        } else {
+            System.out.println("Mahasiswa tidak ditemukan.");
+        }
+    }    
 }
