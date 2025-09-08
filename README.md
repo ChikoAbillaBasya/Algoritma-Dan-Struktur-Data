@@ -122,17 +122,6 @@ Di sini, Anda akan menemukan berbagai **proyek menarik**, **implementasi algorit
 
 ---
 
-## 🤝 Mari Berkolaborasi!
-
-Jika Anda tertarik dengan proyek-proyek ini atau ingin berdiskusi tentang algoritma dan struktur data, jangan ragu untuk:
-
-- 🌟 **Star** repositori ini
-- 🍴 **Fork** untuk eksperimen Anda sendiri
-- 📧 **Hubungi** saya untuk diskusi lebih lanjut
-- 🐛 **Report** jika menemukan bug atau improvement
-
----
-
 <div align="center">
   
   ### 💡 "The best way to learn is by doing!"
