@@ -128,8 +128,4 @@ Di sini, Anda akan menemukan berbagai **proyek menarik**, **implementasi algorit
   
   **Happy Coding!** 🎉
   
-  ---
-  
-  ⭐ **Jangan lupa beri star jika repositori ini membantu!** ⭐
-  
 </div>
